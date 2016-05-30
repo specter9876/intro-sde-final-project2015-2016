@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# bin/detect <build-dir>
+
+BUILD_DIR=$1
+
+. $(dirname $0)/common
+
+if [ -f $BUILD_DIR/build.xml ]; then
+   echo "Java (using Apache Ant $ANT_VER)" && exit 0
+else
+  echo "no" && exit 1
+fi
